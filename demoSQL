@@ -1,0 +1,54 @@
+studentmarklis.
+insert  into  studentmarklist ( rollno, sname, mark1, mark2, mark3 ) values( '&rollno', '&sname', '&mark1', '&mark2', '&mark3' );
+Enter value for rollno: 111
+Enter value for sname: ‘udya’
+Enter value for mark1: 85
+Enter value for mark2: 89
+Enter value for mark3: 90
+/
+Enter value for rollno: 222
+Enter value for sname: ‘sambit’
+Enter value for mark1: 55
+Enter value for mark2: 60
+Enter value for mark3: 50
+/
+Enter value for rollno: 333
+Enter value for sname: ‘deepak’
+Enter value for mark1: 50
+Enter value for mark2: 51
+Enter value for mark3: 47
+/
+Enter value for rollno: 444
+Enter value for sname: ‘alok’
+Enter value for mark1: 35
+Enter value for mark2: 40
+Enter value for mark3: 20
+
+UPDATE
+update studentmarklist set total=mark1+mark2+mark3;
+ update studentmarklist set grade = 'O 'where total>200;
+update studentmarklist set grade = 'A' where total >=150 and total <=200;
+update studentmarklist set grade = 'B' where total>100 and total<=149;
+update studentmarklist set grade='F' where total<100;
+
+table_record
+select * from studentmarklist;
+
+select sname from studentmarklist where sname like 'a%';
+select * from studentmarklist where sname like 'a%';
+select sname from studentmarklist where sname like '%t';
+select * from studentmarklist where sname like '%t;
+
+//find the data who have got more than 80 in every subject
+select * from studentmarklist where mark1>80 and mark2>80 and mark3>80;
+select max(total)from studentmarklist;
+select min(total) from studentmarklist;
+select * from studentmarklist where grade='f';
+select * from studentmarklist where grade = 'O' ;
+select * from cstudent where total>150
+select rollno,sname,m1,m2 from studentmarklist where m1>70 and m2>40;
+ select rollno,sname,m1 from studentmarklist where m1 not between 70 and 80;
+select rollno,sname,m1 from studentmarklist where m1 between 70 and 90;
+select avg(m1) from studentmarklist;
+select min(m1),min(m2) from studentmarklist;
+select sum(m1) "Total of mark1" from studentmarklist;
