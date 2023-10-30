@@ -6,7 +6,8 @@ sname varchar2(14) not null,
 mark1 number(3) not null,
 mark2 number(3) not null,
 mark3 number(3) not null,
-total number(3),grade varchar2(1)
+total number(3),
+grade varchar2(1)
  );
 
 insert  into  studentmarklist ( rollno, sname, mark1, mark2, mark3 ) values( '&rollno', '&sname', '&mark1', '&mark2', '&mark3' );
