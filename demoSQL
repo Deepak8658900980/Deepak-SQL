@@ -1,7 +1,7 @@
 studentmarklis.
 create table studentmarklist 
 ( 
-rollno number(4) constraints pkey primary key,
+rollno number(4) primary key,
 sname varchar2(14) not null,
 mark1 number(3) not null,
 mark2 number(3) not null,
