@@ -1,5 +1,5 @@
 studentmarklis.
-create table studentmarklist 
+create table studentmarklist
 ( 
 rollno number(4) primary key,
 sname varchar2(14) not null,
@@ -16,28 +16,84 @@ Enter value for sname: ‘udya’
 Enter value for mark1: 85
 Enter value for mark2: 89
 Enter value for mark3: 90
+old   1: insert  into  studentmarklist (rollno,sname,mark1,mark2,mark3) values('&rollno','&sname','&mark1','&mark2','&mark3')
+new   1: insert  into  studentmarklist (rollno,sname,mark1,mark2,mark3) values('111','udya','85','89','90')
 /
 Enter value for rollno: 222
 Enter value for sname: ‘sambit’
 Enter value for mark1: 55
 Enter value for mark2: 60
 Enter value for mark3: 50
+old   1: insert  into  studentmarklist (rollno,sname,mark1,mark2,mark3) values('&rollno','&sname','&mark1','&mark2','&mark3')
+new   1: insert  into  studentmarklist (rollno,sname,mark1,mark2,mark3) values('222','sambit','55','60','50')
 /
 Enter value for rollno: 333
 Enter value for sname: ‘deepak’
 Enter value for mark1: 50
 Enter value for mark2: 51
 Enter value for mark3: 47
+old   1: insert  into  studentmarklist (rollno,sname,mark1,mark2,mark3) values('&rollno','&sname','&mark1','&mark2','&mark3')
+new   1: insert  into  studentmarklist (rollno,sname,mark1,mark2,mark3) values('333','deepak','50','51','47')
 /
 Enter value for rollno: 444
 Enter value for sname: ‘alok’
 Enter value for mark1: 35
 Enter value for mark2: 40
 Enter value for mark3: 20
+old   1: insert  into  studentmarklist (rollno,sname,mark1,mark2,mark3) values('&rollno','&sname','&mark1','&mark2','&mark3')
+new   1: insert  into  studentmarklist (rollno,sname,mark1,mark2,mark3) values('444','alok','35','40','20')
+ /
+Enter value for rollno: 555
+Enter value for sname: soumya
+Enter value for mark1: 40
+Enter value for mark2: 87
+Enter value for mark3: 98
+old   1: insert  into  studentmarklist (rollno,sname,mark1,mark2,mark3) values('&rollno','&sname','&mark1','&mark2','&mark3')
+new   1: insert  into  studentmarklist (rollno,sname,mark1,mark2,mark3) values('555','soumya','40','87','98')
+ /
+Enter value for rollno: 666
+Enter value for sname: ajit
+Enter value for mark1: 50
+Enter value for mark2: 60
+Enter value for mark3: 75
+old   1: insert  into  studentmarklist (rollno,sname,mark1,mark2,mark3) values('&rollno','&sname','&mark1','&mark2','&mark3')
+new   1: insert  into  studentmarklist (rollno,sname,mark1,mark2,mark3) values('666','ajit','50','60','75')
+ /
+Enter value for rollno: 777
+Enter value for sname: kunal
+Enter value for mark1: 40
+Enter value for mark2: 90
+Enter value for mark3: 56
+old   1: insert  into  studentmarklist (rollno,sname,mark1,mark2,mark3) values('&rollno','&sname','&mark1','&mark2','&mark3')
+new   1: insert  into  studentmarklist (rollno,sname,mark1,mark2,mark3) values('777','kunal','40','90','56')
+ /
+Enter value for rollno: 888
+Enter value for sname: amit
+Enter value for mark1: 60
+Enter value for mark2: 76
+Enter value for mark3: 89
+old   1: insert  into  studentmarklist (rollno,sname,mark1,mark2,mark3) values('&rollno','&sname','&mark1','&mark2','&mark3')
+new   1: insert  into  studentmarklist (rollno,sname,mark1,mark2,mark3) values('888','amit','60','76','89')
+ /
+Enter value for rollno: 999
+Enter value for sname: subham
+Enter value for mark1: 87
+Enter value for mark2: 98
+Enter value for mark3: 78
+old   1: insert  into  studentmarklist (rollno,sname,mark1,mark2,mark3) values('&rollno','&sname','&mark1','&mark2','&mark3')
+new   1: insert  into  studentmarklist (rollno,sname,mark1,mark2,mark3) values('999','subham','87','98','78')
+/
+Enter value for rollno: 1000
+Enter value for sname: swati
+Enter value for mark1: 76
+Enter value for mark2: 78
+Enter value for mark3: 79
+old   1: insert  into  studentmarklist (rollno,sname,mark1,mark2,mark3) values('&rollno','&sname','&mark1','&mark2','&mark3')
+new   1: insert  into  studentmarklist (rollno,sname,mark1,mark2,mark3) values('1000','swati','76','78','79')
 
 UPDATE
 update studentmarklist set total=mark1+mark2+mark3;
- update studentmarklist set grade = 'O 'where total>200;
+update studentmarklist set grade = 'O 'where total>200;
 update studentmarklist set grade = 'A' where total >=150 and total <=200;
 update studentmarklist set grade = 'B' where total>100 and total<=149;
 update studentmarklist set grade='F' where total<100;
@@ -57,9 +113,35 @@ select min(total) from studentmarklist;
 select * from studentmarklist where grade='f';
 select * from studentmarklist where grade = 'O' ;
 select * from cstudent where total>150
-select rollno,sname,m1,m2 from studentmarklist where m1>70 and m2>40;
- select rollno,sname,m1 from studentmarklist where m1 not between 70 and 80;
+select rollno,sname,mark1,mark2 from studentmarklist where mark1>70 and mark2>40;
+//find the 'Rollno','SName',Mark1 from the existing table where the mark1 not between 70 and 80
+select rollno,sname,mark1 from studentmarklist where mark1 not between 70 and 80;
+ ROLLNO SNAME               MARK1
+---------- -------------- ----------
+       111 udya                   85
+       222 sambit                 55
+       333 deepak                 50
+       444 alok                   35
+       555 soumya                 40
+       666 ajit                   50
+       777 kunal                  40
+       888 amit                   60
+       999 subham                 87
 select rollno,sname,m1 from studentmarklist where m1 between 70 and 90;
 select avg(m1) from studentmarklist;
 select min(m1),min(m2) from studentmarklist;
 select sum(m1) "Total of mark1" from studentmarklist;
+// add a new field in the existing table 
+alter table studentmarklist
+add(percentage varchar(3));
+// find the name who have getting 200 or more than 200 in total 
+select sname from studentmarklist1
+where total >200;
+// this person are getting morethan 200 in total mark 
+SNAME
+--------------
+udya
+soumya
+amit
+subham
+swati
