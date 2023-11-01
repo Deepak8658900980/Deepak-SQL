@@ -145,3 +145,103 @@ soumya
 amit
 subham
 swati
+//Drop a column from the studentmarklist
+ alter table studentmarklist1
+ drop column percentage;
+//add a percentage column in the table 
+alter table studentmarklist1
+add (percentage varchar(5));
+
+    ROLLNO SNAME               MARK1      MARK2      MARK3      TOTAL G PERCE
+---------- -------------- ---------- ---------- ---------- ---------- - -----
+       111 udya                   85         89         90        264 O
+       222 sambit                 55         60         50        165 A
+       333 deepak                 50         51         47        148 B
+       444 alok                   35         40         20         95 f
+       555 soumya                 40         87         98        225 O
+       666 ajit                   50         60         75        185 A
+       777 kunal                  40         90         56        186 A
+       888 amit                   60         76         89        225 O
+       999 subham                 87         98         78        263 O
+      1000 swati                  76         78         79        233 O
+
+ update studentmarklist1
+ set percentage='40%'
+ where total<150 and total>140;
+  ROLLNO SNAME               MARK1      MARK2      MARK3      TOTAL G PERCE
+---------- -------------- ---------- ---------- ---------- ---------- - -----
+       111 udya                   85         89         90        264 O
+       222 sambit                 55         60         50        165 A
+       333 deepak                 50         51         47        148 B 40%
+       444 alok                   35         40         20         95 f
+       555 soumya                 40         87         98        225 O
+       666 ajit                   50         60         75        185 A
+       777 kunal                  40         90         56        186 A
+       888 amit                   60         76         89        225 O
+       999 subham                 87         98         78        263 O
+      1000 swati                  76         78         79        233 O
+
+update studentmarklist1
+set percentage='80%'
+where total>200;
+ ROLLNO SNAME               MARK1      MARK2      MARK3      TOTAL G PERCE
+---------- -------------- ---------- ---------- ---------- ---------- - -----
+       111 udya                   85         89         90        264 O 80%
+       222 sambit                 55         60         50        165 A
+       333 deepak                 50         51         47        148 B 40%
+       444 alok                   35         40         20         95 f
+       555 soumya                 40         87         98        225 O 80%
+       666 ajit                   50         60         75        185 A
+       777 kunal                  40         90         56        186 A
+       888 amit                   60         76         89        225 O 80%
+       999 subham                 87         98         78        263 O 80%
+      1000 swati                  76         78         79        233 O 80%
+
+ update studentmarklist1
+ set percentage='60%'
+ where total>180 and total<200;
+ ROLLNO SNAME               MARK1      MARK2      MARK3      TOTAL G PERCE
+---------- -------------- ---------- ---------- ---------- ---------- - -----
+       111 udya                   85         89         90        264 O 80%
+       222 sambit                 55         60         50        165 A
+       333 deepak                 50         51         47        148 B 40%
+       444 alok                   35         40         20         95 f
+       555 soumya                 40         87         98        225 O 80%
+       666 ajit                   50         60         75        185 A 60%
+       777 kunal                  40         90         56        186 A 60%
+       888 amit                   60         76         89        225 O 80%
+       999 subham                 87         98         78        263 O 80%
+      1000 swati                  76         78         79        233 O 80%
+
+update studentmarklist1
+set percentage='50%'
+where total>160 and total<180;
+ ROLLNO SNAME               MARK1      MARK2      MARK3      TOTAL G PERCE
+---------- -------------- ---------- ---------- ---------- ---------- - -----
+       111 udya                   85         89         90        264 O 80%
+       222 sambit                 55         60         50        165 A 50%
+       333 deepak                 50         51         47        148 B 40%
+       444 alok                   35         40         20         95 f
+       555 soumya                 40         87         98        225 O 80%
+       666 ajit                   50         60         75        185 A 60%
+       777 kunal                  40         90         56        186 A 60%
+       888 amit                   60         76         89        225 O 80%
+       999 subham                 87         98         78        263 O 80%
+      1000 swati                  76         78         79        233 O 80%
+
+update studentmarklist1
+set percentage='25%'
+where total<100;
+
+    ROLLNO SNAME               MARK1      MARK2      MARK3      TOTAL G PERCE
+---------- -------------- ---------- ---------- ---------- ---------- - -----
+       111 udya                   85         89         90        264 O 80%
+       222 sambit                 55         60         50        165 A 50%
+       333 deepak                 50         51         47        148 B 40%
+       444 alok                   35         40         20         95 f 25%
+       555 soumya                 40         87         98        225 O 80%
+       666 ajit                   50         60         75        185 A 60%
+       777 kunal                  40         90         56        186 A 60%
+       888 amit                   60         76         89        225 O 80%
+       999 subham                 87         98         78        263 O 80%
+      1000 swati                  76         78         79        233 O 80%
